@@ -3,22 +3,24 @@ package classstructureattributes;
 import java.util.Scanner;
 
 public class ClientMain {
+
     public static void main(String[] args) {
-        ClientMain client1 = new ClientMain();
 
         Scanner scanner = new Scanner(System.in);
 
+        Client client = new Client();
+
         System.out.println("Kérem, adja meg a nevét.");
-        String name = scanner.nextLine();
+        client.name = scanner.nextLine();
 
         System.out.println("Kérem, adja meg a születési évét.");
-        int year = scanner.nextInt();
-        scanner.nextLine();
+        client.year = scanner.nextInt();
+        client.address = scanner.nextLine();
 
         System.out.println("Kérem, adja meg a címét");
-        String address = scanner.nextLine();
+        client.address = scanner.nextLine();
 
 
-        System.out.println("Regisztrációs adatok: Név: " + name + ", Születési év: " + year + ", Cím: " + address);
+        System.out.println("Regisztrációs adatok: Név: " + client.name + ", Születési év: " + client.year + ", Cím: " + client.address);
     }
 }
