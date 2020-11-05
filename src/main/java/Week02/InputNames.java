@@ -12,11 +12,12 @@ public class InputNames {
 
         for (int i = 0; i < 5; i++);
         {System.out.println("Kérem, adja meg a nevét.");
-        arrayOfNames[i] = scanner.nextLine();
+            int i;
+            arrayOfNames[i] = scanner.nextLine();
         }
 
-        for (int i = 0; i < arrayOfNames.length; i++); {
-            System.out.println(arrayOfNames[1]);
+        for (String name: arrayOfNames); {
+            System.out.println();
         }
     }
 }
