@@ -13,7 +13,6 @@ public class InputNames {
         for (int i = 0; i < 5; i++);
         {System.out.println("Kérem, adja meg a nevét.");
             int i;
-            arrayOfNames[i] = scanner.nextLine();
         }
 
         for (String name: arrayOfNames); {
