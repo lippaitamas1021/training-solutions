@@ -8,12 +8,15 @@ public class InputNames {
 
         Scanner scanner = new Scanner(System.in);
 
-        int[] arrayOfNames = new int[5];
+        String[] arrayOfNames = new String[5];
 
-        for (int i = 0; i < arrayOfNames.length; i++);
-        {
+        for (int i = 0; i < 5; i++);
+        {System.out.println("Kérem, adja meg a nevét.");
+        arrayOfNames[i] = scanner.nextLine();
         }
 
-        System.out.println(arrayOfNames[i]);
+        for (int i = 0; i < arrayOfNames.length; i++); {
+            System.out.println(arrayOfNames[1]);
+        }
     }
 }
