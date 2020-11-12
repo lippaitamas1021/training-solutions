@@ -27,6 +27,7 @@ public class Capsules {
         return colors;
     }
 
+
     public static void main(String[] args) {
         Capsules capsules = new Capsules();
         capsules.addLast("red");
