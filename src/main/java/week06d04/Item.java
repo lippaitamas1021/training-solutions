@@ -10,9 +10,18 @@ public class Item {
     private int month;
 
     public Item(int price, int year, int month, int day, String name) {
-        if (price < 0) {
+        if (price <= 0) {
             throw new IllegalArgumentException("Wrong price");
         }
+
+        if (name == null || name.isBlank()) {
+            throw new IllegalArgumentException("Name can't stay blank");
+        }
+
+        if (month < 1 || month > 12) {
+            throw new IllegalArgumentException("Invalid month");
+        }
+
         this.price = price;
         date = LocalDate.of(year, month, day);
         this.name = name;
