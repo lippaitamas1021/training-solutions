@@ -1,7 +1,5 @@
 package week07d01;
 
-import jdk.swing.interop.SwingInterOpUtils;
-
 public class Fibonacci {
 
     public static long fib(int n) {
@@ -14,8 +12,13 @@ public class Fibonacci {
         if (n == 1) {
             return 1;
         }
-        return fib(n - 2) + fib(n - 1);
+        if (RESULTS[n] == null) {       //részeredmény elmentése, mely gyorsítja a végrehajtást
+            RESULTS[n] = fib(n - 2) + fib(n - 1);
+        }
+        return RESULTS[n];
     }
+
+    private static final Long[] RESULTS = new Long[1000];
 
     public static void main(String[] args) {
         System.out.println(fib(5));     // 0 1 1 2 3 5 8 13
