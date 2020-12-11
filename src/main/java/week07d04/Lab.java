@@ -1,37 +1,38 @@
 package week07d04;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class Lab {
 
     private String title;
     private boolean completed;
-    private LocalDate completedAt;
+    private LocalDateTime completedAt;
 
     public Lab(String title) {
         this.title = title;
         completed = false;
     }
 
-    public Lab(String title, LocalDate completedAt) {
+    public Lab(String title, LocalDateTime completedAt) {
         this.title = title;
         completed = true;
         this.completedAt = completedAt;
     }
 
-    public void complete(LocalDate localDate) {
+    public void complete(LocalDateTime localDateTime) {
         completed = true;
-        localDate = completedAt;
+        localDateTime = completedAt;
     }
 
     public void complete() {
         completed = true;
-        completedAt = LocalDate.now();
+        completedAt = LocalDateTime.now();
     }
 
     @Override
     public String toString() {
-        return "Elvégzett feladat: " + title + '\'' + ", Státusza: " + completed + ", Időpont: " + completedAt + "." ;}
+        return "Elvégzett feladat: " + title + ", Státusza: " + completed + ", Időpont: " + completedAt.toString() + "." ;}
 
 
 
