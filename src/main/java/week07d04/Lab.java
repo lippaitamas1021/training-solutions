@@ -1,33 +1,52 @@
 package week07d04;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 public class Lab {
 
     private String title;
     private boolean completed;
-    private LocalDateTime completedAt;
+    private LocalDate completedAt;
 
     public Lab(String title) {
         this.title = title;
         completed = false;
     }
 
-    public Lab(String title, LocalDateTime completedAt) {
+    public Lab(String title, LocalDate completedAt) {
         this.title = title;
-        completed = true;
+        this.completed = true;
         this.completedAt = completedAt;
     }
 
-    public void complete(LocalDateTime localDateTime) {
-        completed = true;
-        localDateTime = completedAt;
+    public String getTitle() {
+        return title;
     }
 
+    public boolean isCompleted() {
+        return completed;
+    }
+
+    public LocalDate getCompletedAt() {
+        return completedAt;
+    }
+    // állapot beállító metódus, nincs visszatérési értéke
+    public void complete(LocalDate completedAt) {
+        completed = true;
+        this.completedAt = completedAt;
+    }
+    // állapot beállító metódus, nincs visszatérési értéke
     public void complete() {
         completed = true;
-        completedAt = LocalDateTime.now();
+        completedAt = LocalDate.now();
+    }
+    // eredményt visszaadó metódus, van visszatérési értéke
+    public boolean isTitleLongerThanTwoCharacters() {
+        return title != null && title.length() > 2;
+    }
+
+    public String titleAndCompleted(String signIfCompleted, String signIfNotCompleted) {
+        return title + " " + (completed ? signIfCompleted : signIfNotCompleted);
     }
 
     @Override
