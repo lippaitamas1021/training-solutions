@@ -19,13 +19,26 @@ public class Lottery {
         return result;
     }
 
-    private Integer generateNumberNotInList(List<Integer> myList) {
+        private Integer generateNumberNotInList(List<Integer> myList) {
         Random random = new Random(10);
         int number = random.nextInt(NUMBERS_INTERVAL) + 1;
         while (myList.contains(number)) {
             number = random.nextInt(NUMBERS_INTERVAL) +1;
         }
         return number;
+    }
+
+    public List<Integer> getNumbersOneLoop(int interval, int numbers) {
+        List<Integer> result = new ArrayList<>();
+        Random random = new Random();
+
+        while (result.size() < numbers) {
+            int number = random.nextInt(interval) + 1;
+            if (result.contains(number)) {
+                result.add(number);
+            }
+        }
+        return result;
     }
 
     public static void main(String[] args) {
