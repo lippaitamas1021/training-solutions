@@ -7,14 +7,14 @@ public class VehicleTest {
 
     @Test
     public void vehicleTest() {
-        Vehicle vehicle = new Vehicle(5,TransmissionType.MANUAL);
-        assertEquals(5, vehicle.getNumberOfGears());
-        assertEquals(TransmissionType.MANUAL, vehicle.getTransmissionType());
+        AbstractVehicle abstractVehicle = new AbstractVehicle(5, TransmissionType.MANUAL);
+        assertEquals(5, abstractVehicle.getNumberOfGears());
+        assertEquals(TransmissionType.MANUAL, abstractVehicle.getTransmissionType());
     }
 
     @Test
     public void carTest() {
-        Car car = new Car(6, TransmissionType.SEQUENTIAL);
+        Car car = new Car(6);
         assertEquals(6, car.getNumberOfGears());
         assertEquals(TransmissionType.AUTOMATIC, car.getTransmissionType());
     }
@@ -28,8 +28,9 @@ public class VehicleTest {
 
     @Test
     public void motorcycleTest() {
-        Motorcycle motorcycle = new Motorcycle(4, TransmissionType.MANUAL);
+        Motorcycle motorcycle = new Motorcycle(4);
         assertEquals(4, motorcycle.getNumberOfGears());
         assertEquals(TransmissionType.SEQUENTIAL, motorcycle.getTransmissionType());
     }
+
 }

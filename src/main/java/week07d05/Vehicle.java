@@ -1,6 +1,16 @@
 package week07d05;
 
-public class Vehicle {
+public interface Vehicle {
+
+    void switchGear(int gear);
+
+    int getNumberOfGears();
+
+    TransmissionType getTransmissionType();
+    
+}
+
+    /*
 
     private int NumberOfGears;
     private TransmissionType transmissionType;
@@ -33,3 +43,5 @@ public class Vehicle {
 
     }
 }
+
+     */
