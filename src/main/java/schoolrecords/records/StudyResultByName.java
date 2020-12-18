@@ -1,23 +1,22 @@
-/*package schoolrecords.records;
+package schoolrecords.records;
 
 public class StudyResultByName {
 
-    private String StudentName;
     private double studyAverage;
+    private String studentName;
 
-    public StudyResultByName(String studentName, double studyAverage) {
-        StudentName = studentName;
+    public StudyResultByName(double studyAverage, String studentName) {
         this.studyAverage = studyAverage;
-    }
-
-    public String getStudentName() {
-        return StudentName;
+        this.studentName = studentName;
     }
 
     public double getStudyAverage() {
         return studyAverage;
     }
 
+    public String getStudentName() {
+        return studentName;
+    }
 }
 
- */
+

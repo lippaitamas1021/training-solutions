@@ -1,11 +1,9 @@
-/*package schoolrecords.records;
+package schoolrecords.records;
+
 import org.junit.jupiter.api.Test;
-
 import java.util.Arrays;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-
 
 public class MarkTest {
 
@@ -29,4 +27,3 @@ public class MarkTest {
     }
 }
 
- */

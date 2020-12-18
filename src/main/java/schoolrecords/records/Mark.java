@@ -1,25 +1,23 @@
-/*package schoolrecords.records;
+package schoolrecords.records;
 
 import java.util.Arrays;
 
 public class Mark {
 
     private MarkType markType;
-    private String subject;
-    private String tutor;
+    private Subject subject;
+    private Tutor tutor;
 
-    public Mark(MarkType markType, String subject, String tutor) {
+    public Mark(MarkType markType, Subject subject, Tutor tutor) {
+        if (markType == null) {
+            throw new NullPointerException("Mark type must not be null!");
+        }
         this.markType = markType;
-        this.subject = subject;
-        this.tutor = tutor;
-    }
 
-    public static final Subject SUBJECT = new Subject("matematika");
+        if (subject == null || tutor == null) {
+            throw new NullPointerException("Both subject and tutor must be provided!");
+        }
 
-
-    public static final Tutor TUTOR = new Tutor("Nagy Lilla", Arrays.asList(SUBJECT));
-
-    public Mark(String markType, Subject subject, Tutor tutor) {
         this.subject = subject;
         this.tutor = tutor;
     }
@@ -36,15 +34,7 @@ public class Mark {
         return tutor;
     }
 
-    @Override
     public String toString() {
-        return "Mark{" +
-                "markType=" + markType +
-                ", subject=" + subject +
-                ", tutor=" + tutor +
-                '}';
+        return markType.getDescription() + "(" + markType.getValue() + ")";
     }
 }
-
-
- */

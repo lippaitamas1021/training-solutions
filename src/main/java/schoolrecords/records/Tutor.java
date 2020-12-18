@@ -1,44 +1,32 @@
-/*package schoolrecords.records;
+package schoolrecords.records;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Tutor {
 
     private String name;
-    private List<Subject> taughtSubjects;
+    private List<Subject> taughtSubjects = new ArrayList<>();
 
-    public Tutor(String name, List<Subject> taughtSubjects) {
+    public Tutor(String name, List<Subject> subjects) {
         this.name = name;
-        this.taughtSubjects = taughtSubjects;
+        for (Subject s : subjects) {
+            taughtSubjects.add(s);
+        }
+    }
+
+    public boolean tutorTeachingSubject(Subject subject) {
+        for (Subject s: taughtSubjects) {
+            if (s.getSubjectName().equals(subject.getSubjectName())) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public String getName() {
         return name;
     }
-
-    public boolean tutorTeachingSubject(Subject subject) {
-        if (taughtSubjects.contains(subject)) {
-            return true;
-        }
-        return false;
-    }
-
-    private boolean isEmpty(String str) {
-        if (str.length() < 1) {
-            return true;
-        }
-        return false;
-    }
-
-
-
-
-    public static void main(String[] args) {
-        Tutor tutor = new Tutor("Nagy Csilla", Arrays.asList(new Subject("matematika"), new Subject("fizika")));
-        System.out.println(tutor.getName() + tutor.tutorTeachingSubject());
-    }
 }
 
 
- */

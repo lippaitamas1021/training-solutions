@@ -1,14 +1,11 @@
-/*package schoolrecords.records;
+package schoolrecords.records;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
-
 import static org.junit.jupiter.api.Assertions.*;
-
 
 public class ClassRecordsTest {
 
@@ -149,4 +146,3 @@ public class ClassRecordsTest {
         assertEquals("Kovács Rita, Nagy Béla, Varga Márton", classRecords.listStudentNames());
     }
 }
- */

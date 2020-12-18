@@ -1,11 +1,8 @@
-/*package schoolrecords.records;
+package schoolrecords.records;
 
 import org.junit.jupiter.api.Test;
-
 import java.util.Arrays;
-
 import static org.junit.jupiter.api.Assertions.*;
-
 
 public class TutorTest {
 
@@ -28,18 +25,5 @@ public class TutorTest {
         assertFalse(tutor.tutorTeachingSubject(new Subject("biológia")));
     }
 }
-© 2020 GitHub, Inc.
-        Terms
-        Privacy
-        Security
-        Status
-        Help
-        Contact GitHub
-        Pricing
-        API
-        Training
-        Blog
-        About
 
 
- */

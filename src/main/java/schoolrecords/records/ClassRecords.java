@@ -1,4 +1,4 @@
-/*package schoolrecords.records;
+package schoolrecords.records;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,90 +6,123 @@ import java.util.Random;
 
 public class ClassRecords {
 
-    private String className;
-    private Random md;
     private List<Student> students = new ArrayList<>();
+    private String className;
+    private Random rnd;
 
-
-    public ClassRecords(String className, Random md) {
+    public ClassRecords(String className, Random rnd) {
         this.className = className;
-        this.md = md;
+        this.rnd = rnd;
     }
 
     public boolean addStudent(Student student) {
-        if (!students.contains(student)) {
-            return students.add(student);
+        if (getStudentByNameOrNull(student.getName()) != null) {
+            return false;
+        }
+        return students.add(student);
+    }
+
+    public boolean removeStudent(Student student) {
+        Student foundStudent = getStudentByNameOrNull(student.getName());
+        if (foundStudent != null) {
+            students.remove(foundStudent);
+            return true;
         } else {
             return false;
         }
     }
 
     public double calculateClassAverage() {
-        return calculateClassAverage();
-    }
-
-
-    public boolean removeStudent(Student student){
-            if (!students.contains(student)) {
-                return false;
-            } else {
-                students.remove(student);
+        if (students.isEmpty()) {
+            throw new ArithmeticException("No student in the class, average calculation aborted!");
+        }
+        double classAverage = 0;
+        int countStudent = 0;
+        for (Student student : students){
+            double studentAverage = student.calculateAverage();
+            if (studentAverage != 0){
+                classAverage += studentAverage;
+                countStudent++;
             }
-        return true;
         }
-
-
-
-    public double calculateClassAverageBySubject() {
-        return calculateClassAverage();
-    }
-
-
-
-
-    public String findStudentByName(String name) {
-        if (students.contains(name)) {
-            return name;
+        if (countStudent == 0){
+            throw new ArithmeticException("No marks present, average calculation aborted!");
         }
-        return "Student not found";
+        return Math.round(100 * classAverage / countStudent ) / 100.0;
     }
 
-    public Student repetition() {
-        Random random = new Random();
-        int szam;
-        for (int i = 0; i < 100; i++) {
-            szam = random.nextInt();
-            students.indexOf(szam);
+    public double calculateClassAverageBySubject(Subject subject) {
+
+        if (students.isEmpty()) {
+            throw new ArithmeticException("No student in the class, average calculation aborted!");
         }
+        double classAverage = 0;
+        int countStudent = 0;
+        for (Student student : students){
+            double studentAverage = student.calculateSubjectAverage(subject);
+            if (studentAverage != 0){
+                classAverage += studentAverage;
+                countStudent++;
+            }
+        }
+        if (countStudent == 0){
+            throw new ArithmeticException("No marks present, average calculation aborted!");
+        }
+        return Math.round(100 * classAverage / countStudent ) / 100.0;
     }
 
-    public List<StudyResultByName> listStudyResults() {
-
+    public Student findStudentByName(String name) {
+        if (students.isEmpty()){
+            throw new IllegalStateException("No students to search!");
+        }
+        if (isEmpty(name)) {
+            throw new IllegalArgumentException("Student name must not be empty!");
+        }
+        Student student = getStudentByNameOrNull(name);
+        if (student == null) {
+            throw new IllegalArgumentException("Student by this name cannot be found! " + name);
+        }
+        return student;
     }
 
-    public String listStudentNames() {
-
+    private Student getStudentByNameOrNull(String name) {
+        for (Student student : students){
+            if (student.getName().equals(name)){
+                return student;
+            }
+        }
+        return null;
     }
 
-    public static void main(String[] args) {
+    public Student repetition(){
+        if (students.isEmpty()){
+            throw new IllegalStateException("No students to select for repetition!");
+        }
+        return students.get(this.rnd.nextInt(students.size()));
+    }
 
-        ClassRecords classRecords = new ClassRecords("Fourth Grade A", );
-        Student firstStudent = new Student("Kovács Rita");
-        classRecords.addStudent(firstStudent);
-        Student secondStudent = new Student("Nagy Béla");
-        classRecords.addStudent(secondStudent)
-        Student thirdStudent = new Student("Varga Márton");
-        classRecords.addStudent(thirdStudent);
-        firstStudent.grading(new Mark(MarkType.A, new Subject("földrajz"), tutor));
-        firstStudent.grading(new Mark(MarkType.C, new Subject("matematika"), tutor));
-        firstStudent.grading(new Mark(MarkType.D, new Subject("földrajz"), tutor));
-        secondStudent.grading(new Mark(MarkType.A, new Subject("biológia"), tutor));
-        secondStudent.grading(new Mark(MarkType.C, new Subject("matematika"), tutor));
-        secondStudent.grading(new Mark(MarkType.D, new Subject("zene"), tutor));
-        thirdStudent.grading(new Mark(MarkType.A, new Subject("fizika"), tutor));
-        thirdStudent.grading(new Mark(MarkType.C, new Subject("kémia"), tutor));
-        thirdStudent.grading(new Mark(MarkType.D, new Subject("földrajz"), tutor));
+    public List<StudyResultByName> listStudyResults(){
+
+        List<StudyResultByName> tempList = new ArrayList<>();
+        for (Student student : students){
+            tempList.add(new StudyResultByName(student.calculateAverage(), student.getName()));
+        }
+        return tempList;
+    }
+
+    public String listStudentNames(){
+        StringBuilder sb = new StringBuilder();
+        for (Student s : students) {
+            sb.append(s.getName()).append(", ");
+        }
+        return sb.toString().substring(0, sb.toString().lastIndexOf(","));
+    }
+
+    private boolean isEmpty(String str) {
+        return str == null || "".equals(str.trim());
+    }
+
+    public String getClassName() {
+        return className;
     }
 }
-
- */

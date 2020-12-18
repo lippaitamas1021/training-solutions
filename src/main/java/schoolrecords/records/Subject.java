@@ -1,13 +1,17 @@
-/*package schoolrecords.records;
+package schoolrecords.records;
 
 public class Subject {
 
     private String subjectName;
 
-    public String getSubjectName(String subjectName) {
+    public Subject(String subjectName) {
+        this.subjectName = subjectName;
+    }
+
+    public String getSubjectName() {
         return subjectName;
     }
 
 }
 
- */
+
