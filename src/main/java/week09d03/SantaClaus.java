@@ -2,7 +2,6 @@ package week09d03;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class SantaClaus {
 
@@ -13,7 +12,7 @@ public class SantaClaus {
     }
 
     public List<Person> getPersons() {
-        return persons;
+        return new ArrayList<>(persons);
     }
 
     public void getThroughChimneys() {
