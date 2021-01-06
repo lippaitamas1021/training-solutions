@@ -16,7 +16,8 @@ public class CvTest {
     public void testAddSkills() {
         Cv cv1 = new Cv("John Doe");
         assertEquals(0, cv1.getSkills().size());
-        cv1.addSkills("programming (5)", "oo design (2)");
+        cv1.addSkills("programming (5)");
+        cv1.addSkills("oo design (2)");
         assertEquals(2, cv1.getSkills().size());
         assertEquals("programming", cv1.getSkills().get(0).getName());
         assertEquals(5, cv1.getSkills().get(0).getLevel());
@@ -30,7 +31,7 @@ public class CvTest {
     }
 
 
-    @Test
+  @Test
     public void testNotFoundSkill() {
         Cv cv1 = new Cv("John Doe");
         assertThrows(SkillNotFoundException.class,
@@ -38,3 +39,5 @@ public class CvTest {
 
     }
 }
+
+

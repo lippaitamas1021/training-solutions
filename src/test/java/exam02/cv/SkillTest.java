@@ -12,3 +12,4 @@ public class SkillTest {
         assertEquals(3, skill.getLevel());
     }
 }
+
