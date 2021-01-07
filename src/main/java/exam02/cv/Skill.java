@@ -18,3 +18,4 @@ public class Skill {
         return level;
     }
 }
+

@@ -23,4 +23,15 @@ public class Cv {
     public void addSkills(String skill) {
         skills.add(skill);
     }
+
+
+    public static void main(String[] args) {
+        Cv cv1 = new Cv("John Doe");
+        System.out.println(cv1.getSkills().size());
+        cv1.addSkills("programming (5)");
+        cv1.addSkills("oo design (2)");
+        System.out.println(cv1.getSkills().size());
+        System.out.println(cv1.getSkills().get(0));
+
+    }
 }
