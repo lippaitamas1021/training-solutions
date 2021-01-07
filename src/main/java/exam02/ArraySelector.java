@@ -1,23 +1,30 @@
 package exam02;
 
-import java.util.Arrays;
-
 public class ArraySelector {
 
-   private int[] numbers = {1, 2, 3, 4, 5};
+    public boolean isEmpty(int[] numbers) {
+        return numbers.length == 0;
+    }
 
     public String selectEvens(int[] numbers) {
         StringBuilder sb = new StringBuilder();
-        if (numbers.length == 0) {
+        if (isEmpty(numbers)) {
             return "";
         }
+        int [] evenNumbers = new int[numbers.length];
+        int db = 0;
         for (int i = 0; i < numbers.length; i++) {
-            numbers[0]
-
+            if (numbers[i] % 2 != 0) {
+                evenNumbers[db] = numbers[i];
+                sb.append(numbers[i]);
             }
-
-        }
+            }
+        String[] s = sb.toString().split("");
         return "[" + sb.toString() + "]";
-    }
+            }
+        }
 
-}
+
+
+
+
