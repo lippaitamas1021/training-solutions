@@ -2,23 +2,28 @@ package week08d04;
 
 public class Trainer {
 
-    private int CanMark;
+    private CanMark canMark;
 
-    public Trainer(int canMark) {
-        CanMark = canMark;
+    public Trainer(CanMark canMark) {
+        this.canMark = canMark;
     }
 
-    /*public int giveMark() {
-
+    public int giveMark() {
+        return canMark.giveMark();
     }
-    Nem értem a kifejezést, hogy ez a metódus továbbhív, azaz "delegál" a CanMark példány felé.
-     */
+
+    public void setMood(CanMark canMark) {
+        this.canMark = canMark;
+    }
 
     public static void main(String[] args) {
-        GoodMood trainer = new GoodMood();
-        BadMood trainer2 = new BadMood();
+        Trainer goodTrainer = new Trainer(new GoodMood());
+        Trainer badTrainer = new Trainer(new BadMood());
 
-        System.out.println(trainer.giveMark());
-        System.out.println(trainer2.giveMark());
+        System.out.println(goodTrainer.giveMark());
+        System.out.println(badTrainer.giveMark());
+
+        goodTrainer.setMood(new BadMood());
+        System.out.println(goodTrainer.giveMark());
     }
 }
