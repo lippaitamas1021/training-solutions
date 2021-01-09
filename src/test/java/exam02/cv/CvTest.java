@@ -16,32 +16,26 @@ public class CvTest {
     public void testAddSkills() {
         Cv cv1 = new Cv("John Doe");
         assertEquals(0, cv1.getSkills().size());
-        cv1.addSkills("programming (5)");
-        cv1.addSkills("oo design (2)");
+        cv1.addSkills("programming (5)", "oo design (2)");
         assertEquals(2, cv1.getSkills().size());
-        assertEquals("programming (5)", cv1.getSkills().get(0));
-        //assertEquals(5, cv1.getSkills().get(0).getLevel());
+        assertEquals("programming", cv1.getSkills().get(0).getName());
+        assertEquals(5, cv1.getSkills().get(0).getLevel());
     }
 
-    /*@Test
+    @Test
     public void testFindSkill() {
         Cv cv = new Cv("John Doe");
         cv.addSkills("programming (5)", "oo design (2)", "english (4)");
         assertEquals(2, cv.findSkillLevelByName("oo design"));
     }
 
-
-
-
- @Test
+    @Test
     public void testNotFoundSkill() {
         Cv cv1 = new Cv("John Doe");
-        assertThrows(SkillNotFoundException.class,
+        assertThrows(IllegalArgumentException.class,
                 () -> cv1.findSkillLevelByName("programming"));
 
     }
-
-     */
 }
 
 
