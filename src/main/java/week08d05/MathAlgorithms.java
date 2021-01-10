@@ -4,12 +4,31 @@ import java.util.Scanner;
 
 public class MathAlgorithms {
 
-    public int greatestCommonDivisor(int x, int y) {
+ /*   public int greatestCommonDivisor(int x, int y) {
         while (x != y) {
             if (x > y) x -= y;
             else y -= x;
         }
         return x;
+    }
+
+    pubic int greatestCommonDivisor(int x, int y) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+        }
+      return a;
+  */
+
+    public int greatestCommonDivisor(int x, int y) {
+        int z = 1;
+        for (int i = 2; i <= Math.min(x, y); i++) {
+            if (x % i == 0 && y % i == 0) {
+                z = i;
+            }
+        }
+        return z;
     }
 
     public static void main(String[] args) {
