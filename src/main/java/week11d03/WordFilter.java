@@ -9,7 +9,7 @@ public class WordFilter {
         List<String> result = new ArrayList<>();
         String s = String.valueOf(c);
         for (String word : words) {
-            if (word.contains(s)) {     //word.contains.valueOf(c)      word.indexOf(c) >= 0  ha az indexe nagyobb, mint 0, akkor szerepel aszóban a karakter
+            if (word.contains(s)) {     //word.contains.valueOf(c) ?      word.indexOf(c) >= 0  ha az indexe nagyobb, mint 0, akkor szerepel aszóban a karakter
                 result.add(word);
             }
         }
