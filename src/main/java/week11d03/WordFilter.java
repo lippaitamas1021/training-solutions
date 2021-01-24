@@ -7,7 +7,7 @@ public class WordFilter {
 
     public List<String> wordsWithChar(List<String> words, char c) {
         List<String> result = new ArrayList<>();
-        String s = String.valueOf(c);
+        String s = String.valueOf(c);   // a contains karaktersoroatot vár, ezért String s = String.valueOf(c)
         for (String word : words) {
             if (word.contains(s)) {     //word.contains.valueOf(c) ?      word.indexOf(c) >= 0  ha az indexe nagyobb, mint 0, akkor szerepel aszóban a karakter
                 result.add(word);
