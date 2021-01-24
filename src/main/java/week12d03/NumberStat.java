@@ -55,7 +55,7 @@ public class NumberStat {
         try (BufferedReader bufferedReader = Files.newBufferedReader(path)) {
             String line;
             while ((line = bufferedReader.readLine()) != null) {
-                String[] temp = line.split(",");
+                String[] temp = line.split(",");        //"1,2,3,4"  -> {"1","2","3","4"}
                 addLine(temp);
             }
 
