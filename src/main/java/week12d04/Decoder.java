@@ -17,8 +17,8 @@ public class Decoder {
             // char c = (char) buffer[i] + 10);
             // System.out.print(c);
             for (byte b : bytes) {
-                char c = (char) (b + 10);
-                System.out.print(c);                    // ha sortörés nélkül kell, akkor Sístem.out.print
+                char c = (char) (b + 10);               // A típuskényszerítés (cast-olás) precedenciája nagyobb, ezért kell zárójelezni
+                System.out.print(c);                    // ha sortörés nélkül kell, akkor Sístem.out.print()
             }
         } catch (IOException ioe) {
             throw new IllegalStateException("Can not decode file", ioe);
