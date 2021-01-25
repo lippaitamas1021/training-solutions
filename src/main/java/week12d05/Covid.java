@@ -17,14 +17,13 @@ public class Covid {
                 }
             }
             return counter;
-
         } catch (IOException ioe) {
-            throw new IllegalStateException("Can not read the file");
+            throw new IllegalStateException("Can not read the file", ioe);
         }
     }
 
     public static void main(String[] args) {
-        Path file = Path.of("index.html");           //"src/main/resources/index.html" ,ha az alkalmazás része a fájl
+        Path file = Path.of("index.html");
         Covid covid = new Covid();
         System.out.println(covid.wordCounter("koronavírus", file));
         System.out.println(covid.wordCounter("covid", file));
