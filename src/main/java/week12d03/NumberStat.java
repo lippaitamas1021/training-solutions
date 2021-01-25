@@ -32,7 +32,7 @@ public class NumberStat {
                 return numbers2.get(i);
             }
         }
-        if (numbers2.get(numbers2.size() - 1) != numbers2.get(numbers2.size() - 2)) {
+        if (numbers2.get(numbers2.size() - 1) != numbers2.get(numbers2.size() - 2)) {   // utolsó elem vizsgálata
             return numbers2.get(numbers2.size() - 1);
         }
         throw new IllegalStateException("Wrong list");          // ha pl. nincs a listában egyedi elem (amiből egy van), akkor dob kivételt
