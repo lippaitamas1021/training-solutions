@@ -10,20 +10,12 @@ public class Phone {
         this.number = number;
     }
 
-    public String getPrefix() {
-        return prefix;
-    }
-
-    public String getNumber() {
-        return number;
-    }
-
-    public void setPrefix(String prefix) {
-        this.prefix = prefix;
-    }
-
-    public void setNumber(String number) {
-        this.number = number;
+    @Override
+    public String toString() {
+        return "Az Ön telefonszáma{" +
+                "körzetszám ='" + prefix + '\'' +
+                ", telefonszám ='" + number + '\'' +
+                '}';
     }
 }
 
