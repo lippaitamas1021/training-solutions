@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Product {
 
     private String name;
-
     private int price;
 
     public Product(String name, int price) {
@@ -22,10 +21,10 @@ public class Product {
     }
 
     public void increasePrice(int amount) {
-        price = price + amount;
+        price += amount;
     }
 
     public void decreasePrice(int amount) {
-        price = price - amount;
+        price -= amount;
     }
 }

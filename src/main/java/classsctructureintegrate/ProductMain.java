@@ -17,10 +17,10 @@ public class ProductMain {
         Product product = new Product(name, price);
         System.out.println(product.getName() + " " + product.getPrice());
 
-        product.increasePrice(2);
+        product.increasePrice(2000);
         System.out.println(product.getName() + " " + product.getPrice());
 
-        product.decreasePrice(1);
+        product.decreasePrice(1000);
         System.out.println(product.getName() + " " + product.getPrice());
     }
 }
