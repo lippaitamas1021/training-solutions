@@ -3,7 +3,6 @@ package classsctructureconstructors;
 public class Store {
 
     private String product;
-
     private int stock;
 
     public Store(String product) {
