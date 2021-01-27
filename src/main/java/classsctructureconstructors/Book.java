@@ -3,9 +3,7 @@ package classsctructureconstructors;
 public class Book {
 
     private String author;
-
     private String title;
-
     private String regNumber;
 
     public Book(String author, String title) {
