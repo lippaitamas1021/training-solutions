@@ -1,9 +1,7 @@
-package names;
+package ioreadstring.names;
 
 import org.junit.jupiter.api.Test;
-
 import java.io.IOException;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class FileManagerTest {
@@ -15,7 +13,6 @@ public class FileManagerTest {
         assertEquals("names.txt", fm.getPath().getFileName().toString());
         assertEquals(0, fm.getHumans().size());
     }
-
 
     @Test
     public void readFromFileTest() throws IOException {

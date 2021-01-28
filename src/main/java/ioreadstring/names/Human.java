@@ -1,4 +1,4 @@
-package names;
+package ioreadstring.names;
 
 public class Human {
 

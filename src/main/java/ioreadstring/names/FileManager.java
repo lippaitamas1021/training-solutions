@@ -1,4 +1,4 @@
-package names;
+package ioreadstring.names;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -11,7 +11,6 @@ public class FileManager {
     private Path path;
     private List<Human> humans = new ArrayList<>();
 
-
     public FileManager(String fileRealtivePath) {
         this.path =  Path.of(fileRealtivePath);
     }
@@ -20,16 +19,14 @@ public class FileManager {
             List<String> fileInString = Files.readAllLines(path);
             for (String s : fileInString) {
                 String firstAndLast[] = s.split(" ");
-                Human h = new Human(firstAndLast[0], firstAndLast[1]);
-                humans.add(h);
+                Human human = new Human(firstAndLast[0], firstAndLast[1]);
+                humans.add(human);
             }
     }
-
 
     public List<Human> getHumans() {
         return new ArrayList<>(humans);
     }
-
 
     public Path getPath() {
         return path;
