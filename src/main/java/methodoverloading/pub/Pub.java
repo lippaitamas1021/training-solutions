@@ -24,5 +24,6 @@ public class Pub {
     public String toString() {
         return name + ";" + openingTime.getHours() + ":" + openingTime.getMinutes();
     }
+
 }
 

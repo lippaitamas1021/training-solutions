@@ -10,14 +10,12 @@ public class ListOfGoodPubsTest {
 
     @Test
     public void emptyPubListShouldThrowException() throws IllegalArgumentException {
-
         Exception ex = assertThrows(IllegalArgumentException.class, () -> new ListOfGoodPubs(new ArrayList<>()));
         assertEquals("Wrong parameter!", ex.getMessage());
     }
 
     @Test
     public void testFindTheBest() {
-
         ListOfGoodPubs goodPubs = new ListOfGoodPubs(Arrays.asList(
                 new Pub("A két rablóhoz", 12, 20),
                 new Pub("Kurta kocsma", 9, 0),
@@ -25,7 +23,7 @@ public class ListOfGoodPubsTest {
                 new Pub("Fehér ló", 22, 30),
                 new Pub("Fekete macska", 23, 30)
         ));
-
         assertEquals("Kurta kocsma;9:0", goodPubs.findTheBest().toString());
     }
+
 }

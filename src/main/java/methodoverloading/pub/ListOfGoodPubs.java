@@ -22,4 +22,5 @@ public class ListOfGoodPubs {
         }
         return bestPub;
     }
+
 }
