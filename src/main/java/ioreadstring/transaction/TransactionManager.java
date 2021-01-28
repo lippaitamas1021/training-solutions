@@ -1,4 +1,6 @@
-package transaction;
+package ioreadstring.transaction;
+
+import exceptionclass.bank.Bank;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -8,7 +10,7 @@ import java.util.List;
 
 public class TransactionManager {
 
-    private List<BankAccount> accountList = new ArrayList<>();
+        private List<BankAccount> accountList = new ArrayList<>();
 
     public void uploadListFromFile(String path){
         Path accounts = Path.of(path);
