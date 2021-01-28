@@ -5,7 +5,7 @@ import java.util.List;
 
 public class CreditCard {
 
-    private static final List<Rate> ACTUAL_RATES = new ArrayList<>();
+    public static final List<Rate> ACTUAL_RATES = new ArrayList<>();
 
     private long balance;
 
