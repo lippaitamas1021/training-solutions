@@ -60,4 +60,5 @@ public class Time {
         Time time = new Time(hours, minutes, seconds);
         return isEarlier(time);
     }
+
 }
