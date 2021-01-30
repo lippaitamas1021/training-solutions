@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.List;
 
 public class TemplateMerger {
@@ -27,5 +28,17 @@ public class TemplateMerger {
             stringBuilder.append(employeeString).append("\n");
         }
         return stringBuilder.toString();
+    }
+
+    public static void main(String[] args) {
+        List<Employee> employees = new ArrayList<>();
+        Employee employee1 = new Employee("John Doe", 1980);
+        Employee employee2 = new Employee("Jack Doe", 1990);
+        employees.add(employee1);
+        employees.add(employee2);
+        TemplateMerger templateMerger = new TemplateMerger();
+        Path path = Path.of("employee.txt");
+        System.out.println(templateMerger.merge(path, employees));
+
     }
 }
