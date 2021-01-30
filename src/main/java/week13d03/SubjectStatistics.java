@@ -13,7 +13,7 @@ public class SubjectStatistics {
 
     public void readFromFile(String fileName) {
     try (BufferedReader bufferedReader = Files.newBufferedReader(Path.of(fileName))) {
-        String[] block = new String[4];
+        String[] block = new String[4];                             // nem egysorban, hanem 4 soros blokkokban van az adat
         while ((block[0] = bufferedReader.readLine()) != null) {
             data.add(processBlock(bufferedReader, block));
     }
@@ -23,10 +23,13 @@ public class SubjectStatistics {
     }
 
     private Subject processBlock(BufferedReader bufferedReader, String[] block) throws IOException {
-        for (int i = 1; i < 4; i++) {
-            block[i] = bufferedReader.readLine();
+        for (int i = 1; i < 4; i++) {                           // i = 1, mert a nulladik elemet már beolvastam
+            String line;
+            if ((line = bufferedReader.readLine()) != null) {
+                block[i] = line;
+            }
         }
-        return new Subject(block[0], block[1], block[2], Integer.parseInt(block[3]));
+            return new Subject(block[0], block[1], block[2], Integer.parseInt(block[3]));
     }
 
     public int weekWork(String name) {
@@ -37,5 +40,33 @@ public class SubjectStatistics {
             }
         }
         return sum;
+    }
+
+    public int sumLessonsOfTeacher(String file, String teacherName) {
+        int sum = 0;
+        try (BufferedReader bufferedReader = Files.newBufferedReader(Path.of(file))) {
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                if (line.equals(teacherName)) {
+                    skipTwoLines(bufferedReader);
+                    sum += Integer.parseInt(bufferedReader.readLine());
+                }
+            }
+        } catch (IOException ioe) {
+            throw new IllegalArgumentException("Wrong file", ioe);
+        }
+        return sum;
+    }
+
+    public void skipTwoLines(BufferedReader bufferedReader) throws IOException {
+        bufferedReader.readLine();
+        bufferedReader.readLine();
+    }
+
+    public static void main(String[] args) {
+        SubjectStatistics subjectStatistics = new SubjectStatistics();
+        subjectStatistics.readFromFile("D:\\training\\training-solutions\\beosztas.txt");
+        System.out.println(subjectStatistics.weekWork("Csincsilla Csilla"));
+        System.out.println(subjectStatistics.sumLessonsOfTeacher("beosztas.txt", "Albatrosz Aladin"));
     }
 }
