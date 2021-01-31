@@ -1,4 +1,4 @@
-package states;
+package ioreader.states;
 
 public class State {
 

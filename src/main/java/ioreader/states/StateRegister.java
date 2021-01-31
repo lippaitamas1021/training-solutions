@@ -1,4 +1,4 @@
-package states;
+package ioreader.states;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -29,7 +29,7 @@ public class StateRegister {
             throw new IllegalStateException("Can't read file!", ioe);
             }
         }
-        
+
     public String findCapitalByStateName(String stateName) {
         for (State state : states) {
             if (stateName.equals(state.getStateName())) {

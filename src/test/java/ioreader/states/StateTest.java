@@ -1,4 +1,4 @@
-package states;
+package ioreader.states;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -6,7 +6,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class StateTest {
 
     private State state = new State("Wyoming", "Cheyenne");
-
 
     @Test
     public void createState() {

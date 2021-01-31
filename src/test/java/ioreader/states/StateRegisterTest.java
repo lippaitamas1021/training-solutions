@@ -1,4 +1,4 @@
-package states;
+package ioreader.states;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -7,7 +7,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class StateRegisterTest {
 
     private StateRegister stateRegister = new StateRegister();
-
 
     @Test
     public void testGetStates() {
@@ -26,13 +25,10 @@ public class StateRegisterTest {
     @Test
     public void testReadFile() {
         assertEquals(0, stateRegister.getStates().size());
-
         stateRegister.readStatesFromFile("stateregister.txt");
-
         assertEquals(50, stateRegister.getStates().size());
         assertEquals("Wyoming", stateRegister.getStates().get(49).getStateName());
     }
-
 
     @Test
     public void wrongStateNameTest() {
@@ -46,11 +42,8 @@ public class StateRegisterTest {
     @Test
     public void findCapitalByStateNameTest() {
         stateRegister.readStatesFromFile("stateregister.txt");
-
         assertEquals("Albany", stateRegister.findCapitalByStateName("New York"));
         assertEquals("Juneau", stateRegister.findCapitalByStateName("Alaska"));
-
     }
-
 }
 
