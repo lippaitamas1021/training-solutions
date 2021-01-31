@@ -1,4 +1,4 @@
-package idread;
+package ioreader.idread;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,7 +13,6 @@ public class IdManager {
 
     public void readIdsFromFile(String fileName) {
         Path file = Path.of("src/main.resources/" + fileName);
-
         try {
             BufferedReader bufferedReader = Files.newBufferedReader(file);
             String line;
