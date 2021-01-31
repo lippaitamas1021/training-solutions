@@ -15,8 +15,8 @@ public class Register {
             } else {
                 Files.writeString(file, Integer.toString(i));
             }
-            } catch (IOException e) {
-            throw new IllegalStateException("Can not find the file", e);
+            } catch (IOException ioe) {
+            throw new IllegalStateException("Can not find the file", ioe);
         }
     }
 
@@ -29,8 +29,8 @@ public class Register {
                 sum += Double.parseDouble(s);
             }
             Files.writeString(file, "average: " + (sum / myFile.size()), StandardOpenOption.APPEND);
-        } catch (IOException e) {
-            throw new IllegalStateException("Can't open file", e);
+        } catch (IOException ioe) {
+            throw new IllegalStateException("Can not find the file", ioe);
         }
     }
 }
