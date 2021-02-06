@@ -25,3 +25,4 @@ public class Indexer {
 // Map<Character, List<String>> expected = new HashMap<>();
 // Map<Character, List<String>> expected = Map.of("A", Arrays.asList("Abraham"), "L", Arrays.asList("Lujza"));
 // VAGY expected.put("A", Arrays.asList("Abraham"), "L", Arrays.asList("Lujza"));
+
