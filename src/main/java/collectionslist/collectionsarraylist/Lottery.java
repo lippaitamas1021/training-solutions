@@ -25,4 +25,10 @@ public class Lottery {
         Collections.sort(winningNumbers);
         return winningNumbers;
     }
+
+    public static void main(String[] args) {
+        Lottery lottery = new Lottery();
+        lottery.createBallPool(90);
+        System.out.println(lottery.selectWinningNumbers(5,90));
+    }
 }
