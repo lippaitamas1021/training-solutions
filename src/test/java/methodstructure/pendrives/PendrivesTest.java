@@ -1,7 +1,6 @@
-package methodstructure.pendrives;
+/*package methodstructure.pendrives;
 
 import methodstructure.pendrive.Pendrive;
-import methodstructure.pendrive.Pendrives;
 import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.List;
@@ -40,3 +39,5 @@ public class PendrivesTest {
         }
     }
 }
+
+ */
