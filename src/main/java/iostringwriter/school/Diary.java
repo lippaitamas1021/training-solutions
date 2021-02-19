@@ -1,4 +1,4 @@
-package school;
+package iostringwriter.school;
 
 import java.io.IOException;
 import java.nio.file.Files;
