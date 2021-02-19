@@ -1,4 +1,4 @@
-package objects;
+/*package objects;
 
 public class ObjectsHowManyInstance {
 
@@ -14,3 +14,5 @@ public class ObjectsHowManyInstance {
         book6 = null;
     }
 }
+
+ */

@@ -1,4 +1,4 @@
-package objects;
+/*package objects;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -47,3 +47,5 @@ public class ObjectsMain {
         books2.add(new Book());
     }
 }
+
+ */
