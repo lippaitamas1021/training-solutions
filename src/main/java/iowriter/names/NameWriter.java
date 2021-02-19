@@ -25,6 +25,6 @@ public class NameWriter {
 
     public static void main(String[] args) {
         NameWriter nameWriter = new NameWriter(Path.of("names.txt"));
-        nameWriter.addAndWrite("Trey Parker");
+        nameWriter.addAndWrite("Mila Kunis");
     }
 }
