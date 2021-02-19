@@ -1,8 +1,8 @@
 package week05d02;
 
 public class ChangeLetter {
-    private static final String VOWELS = "aeiou";
 
+    private static final String VOWELS = "aeiou";
     private static final String REPLACE_CHAR = "*";
 
     public String changeVowels(String target) {
