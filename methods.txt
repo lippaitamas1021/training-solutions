@@ -1,0 +1,4 @@
+Metódus generálása:
+
+Ha ki kell szervezni egy folyamatot, akkor ki kell jelölni a részt, jobb egérgomb, Refactor,
+Extra method és az IDEA kiszervezi.
