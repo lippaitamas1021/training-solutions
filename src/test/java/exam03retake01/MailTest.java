@@ -20,3 +20,4 @@ public class MailTest {
         assertEquals("Hi All!", mail.getMessage());
     }
 }
+
