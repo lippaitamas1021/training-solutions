@@ -16,19 +16,17 @@ public class VowelFilter {
         StringBuilder stringBuilder = new StringBuilder();
         try {
             while ((line = bufferedReader.readLine()) != null) {
-                //System.out.println(line);
                 String[] temp = line.split("");
                 for (int i = 0; i < temp.length; i++) {
-                    if (vowels.contains(temp[i].toLowerCase())) {
+                    if (!vowels.contains(temp[i].toLowerCase())) {
                         stringBuilder.append(temp[i]);
-                        stringBuilder.append("\n");
                     }
                 }
+                stringBuilder.append("\n");
             }
         } catch (IOException e) {
             throw new IllegalStateException("Failed at reading", e);
         }
-        //System.out.println(stringBuilder.toString());
         return stringBuilder.toString();
     }
 
