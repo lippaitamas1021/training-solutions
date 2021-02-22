@@ -10,8 +10,14 @@ public class CdvCheck {
         String nineNumber = taxNumber.substring(0,9);
         char[] charArray = nineNumber.toCharArray();
         int counter = 0;
+
         for (int i = 0; i < charArray.length; i++) {
-            counter += Integer.parseInt(String.valueOf(charArray[i])) * (i + 1);
+            int number = Integer.parseInt(String.valueOf(charArray[i]));
+            if (0 <= number && number <= 9) {
+                counter += number * (i + 1);
+            } else {
+                throw new IllegalArgumentException("The taxnumber must contains only numbers");
+            }
         }
         if (counter % 11 == Integer.parseInt(tenthNumber)) {
             return true;
