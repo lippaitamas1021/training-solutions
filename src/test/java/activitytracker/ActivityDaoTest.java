@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mariadb.jdbc.MariaDbDataSource;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -38,5 +39,10 @@ class ActivityDaoTest {
     @Test
     void selectAllActivitiesTest() {
         assertEquals(3, activityDao.selectAllActivities().size());
+    }
+
+    @Test
+    public void selectBeforeDateTest() {
+        System.out.println(activityDao.activitiesBeforeDate(LocalDate.of(2021,3,3)));
     }
 }

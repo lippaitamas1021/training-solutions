@@ -1,8 +1,9 @@
 package activitytracker;
 
-import org.flywaydb.core.Flyway;
 import org.mariadb.jdbc.MariaDbDataSource;
+
 import java.sql.SQLException;
+import java.time.LocalDate;
 
 public class ActivityTrackerMain {
 
@@ -85,12 +86,13 @@ public class ActivityTrackerMain {
 //        System.out.println(atm.selectActivityById(dataSource, 3));
 //        System.out.println(atm.selectAllActivities(dataSource));
 
-        Flyway flyway = Flyway.configure().dataSource(dataSource).load();
-        flyway.clean();
-        flyway.migrate();
+//        Flyway flyway = Flyway.configure().dataSource(dataSource).load();
+//        flyway.clean();
+//        flyway.migrate();
 
-//        ActivityDao activityDao = new ActivityDao(dataSource);
+        ActivityDao activityDao = new ActivityDao(dataSource);
 //        System.out.println(activityDao.selectActivityById(4));
 //        System.out.println(activityDao.selectActivitiesByType(ActivityType.BIKING));
+        System.out.println(activityDao.activitiesBeforeDate(LocalDate.of(2021,3,3)));
     }
 }
