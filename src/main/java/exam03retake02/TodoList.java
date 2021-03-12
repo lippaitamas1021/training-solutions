@@ -26,20 +26,18 @@ public class TodoList {
     }
 
     public List<String> getMostImportantTodosText() {
-        List<String> importantTodos = new ArrayList<>();
+        List<String> texts = new ArrayList<>();
+        int maxPriority = 5;
         for (Todo todo : todos) {
-            if (todo.getPriority() == 1) {
-                importantTodos.add(todo.getText());
-            }
+           if (maxPriority > todo.getPriority()) {
+               maxPriority = todo.getPriority();
+               texts.clear();
+               texts.add(todo.getText());
+           } else if (maxPriority == todo.getPriority()) {
+               texts.add(todo.getText());
+           }
         }
-        if (importantTodos.isEmpty()) {
-            for (Todo todo : todos) {
-                if (todo.getPriority() == 2) {
-                    importantTodos.add(todo.getText());
-                }
-            }
-        }
-        return importantTodos;
+        return texts;
     }
 
     public void deleteCompleted() {
