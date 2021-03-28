@@ -1,4 +1,4 @@
-package initalizer;
+package initializer.initializer;
 
 public class Rate {
 
