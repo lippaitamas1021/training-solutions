@@ -3,11 +3,8 @@ package javabeans;
 public class Dog {
 
     private String name;
-
     private int age;
-
     private boolean pedigree;
-
     private double weight;
 
     public Dog(String name, int age, boolean pedigree, double weight) {
@@ -15,6 +12,9 @@ public class Dog {
         this.age = age;
         this.pedigree = pedigree;
         this.weight = weight;
+    }
+
+    public Dog() {
     }
 
     public String getName() {
