@@ -12,9 +12,7 @@ public class SimpleThreadTest {
         List<String> tasks = new ArrayList<>();
         SimpleThread simpleThread = new SimpleThread(tasks);
         assertEquals(0, simpleThread.getTasks().size());
-
         simpleThread.run();
-
         assertEquals(0, simpleThread.getTasks().size());
     }
 
@@ -26,9 +24,7 @@ public class SimpleThreadTest {
         tasks.add("takarit");
         SimpleThread simpleThread = new SimpleThread(tasks);
         assertEquals(tasks.size(), simpleThread.getTasks().size());
-
         simpleThread.run();
-
         assertEquals(0, simpleThread.getTasks().size());
     }
 }
