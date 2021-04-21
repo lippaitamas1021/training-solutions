@@ -34,10 +34,6 @@ public abstract class Fish {
 
     @Override
     public String toString() {
-        return "Fish{" +
-                "name='" + name + '\'' +
-                ", weight=" + weight +
-                ", color='" + color + '\'' +
-                '}';
+        return name + ", " + "weight: " + weight + ", " + "color: " + color + ", " + "short term memory loss: " + hasMemoryLoss();
     }
 }
