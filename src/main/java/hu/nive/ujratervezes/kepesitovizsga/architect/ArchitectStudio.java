@@ -59,7 +59,6 @@ public class ArchitectStudio {
         if (type == null) {
             throw new IllegalArgumentException("Parameter must not be null!");
         }
-
         return plans
                 .values()
                 .stream()
