@@ -12,7 +12,6 @@ public class MatrixTest {
         int[][] a = {{1,1,1},{1,1,1},{1,1,1}};
         int[][] b = {{5,5,5},{5,5,5},{5,5,5}};
         int[][] c = {{6,6,6},{6,6,6},{6,6,6}};
-
         assertEquals(true, Arrays.deepEquals(c,m.matrixAdd(a, b)));
     }
 }
