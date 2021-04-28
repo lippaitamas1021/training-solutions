@@ -17,4 +17,12 @@ public class Band {
     public int getYear() {
         return year;
     }
+
+    @Override
+    public String toString() {
+        return "Band{" +
+                "name='" + name + '\'' +
+                ", year=" + year +
+                '}';
+    }
 }

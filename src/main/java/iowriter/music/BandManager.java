@@ -28,7 +28,7 @@ public class BandManager {
     public void writeBandsBefore(Path outputFile, int year) {
         try (BufferedWriter bufferedWriter = Files.newBufferedWriter(outputFile)) {
             for (Band band : olderThan(year)) {
-                bufferedWriter.write(band.getName() + " " + band.getYear() + "\n");
+                bufferedWriter.write(band.getName() + ";" + band.getYear() + "\n");
             }
         } catch (IOException e) {
             throw new IllegalStateException("Can not write the file", e);
