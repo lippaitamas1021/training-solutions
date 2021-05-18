@@ -33,9 +33,4 @@ public class BalatonStorm {
     private String extractStationName(String line) {
         return line.substring(line.indexOf(": \"") + 3, line.lastIndexOf("\""));
     }
-
-    public static void main(String[] args) throws IOException {
-        BalatonStorm balatonStorm = new BalatonStorm();
-
-    }
 }
