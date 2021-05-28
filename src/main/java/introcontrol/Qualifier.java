@@ -1,6 +1,5 @@
 package introcontrol;
 
-import javax.swing.*;
 import java.util.Scanner;
 
 public class Qualifier {

@@ -1,4 +1,4 @@
-package jdbc;
+/*package jdbc;
 
 import org.flywaydb.core.Flyway;
 import org.junit.jupiter.api.BeforeEach;
@@ -51,3 +51,5 @@ class EmployeesDaoTransactionTest {
         assertEquals(Collections.emptyList(), names);
     }
 }
+
+ */

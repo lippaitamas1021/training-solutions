@@ -1,4 +1,4 @@
-package jdbc;
+/*package jdbc;
 
 import org.flywaydb.core.Flyway;
 import org.junit.jupiter.api.BeforeEach;
@@ -36,3 +36,5 @@ class EmployeesDaoTwoTest {
         assertEquals("Bill Gates", name);
     }
 }
+
+ */

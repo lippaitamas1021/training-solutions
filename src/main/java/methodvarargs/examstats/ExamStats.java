@@ -4,8 +4,8 @@ public class ExamStats {
 
     private int maxPoints;
 
-    public ExamStats(int masPoints) {
-        this.maxPoints = masPoints;
+    public ExamStats(int maxPoints) {
+        this.maxPoints = maxPoints;
     }
 
     public int getNumberOfTopGrades(int limitInPercent, int... results) {

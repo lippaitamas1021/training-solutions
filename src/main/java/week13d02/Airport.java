@@ -65,7 +65,7 @@ public class Airport {
                 flights2.add(flight);
             }
         }
-        if (flights.size() > 0) {
+        if (0 < flights.size()) {
             return flights;
         }
         throw new IllegalArgumentException("No flight found");

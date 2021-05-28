@@ -43,5 +43,4 @@ public class Lottery {
         Lottery lottery = new Lottery();
         System.out.println(lottery.getNumbers());
     }
-
 }

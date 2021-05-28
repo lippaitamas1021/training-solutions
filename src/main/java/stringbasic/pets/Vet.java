@@ -13,8 +13,6 @@ public class Vet {
         }
     }
 
-
-
     public List<Pet> getPets() {
         return pets;
     }
