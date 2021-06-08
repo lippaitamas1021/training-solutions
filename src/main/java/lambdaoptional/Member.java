@@ -9,6 +9,9 @@ public class Member {
     private List<String> skills;
     private Sex gender;
 
+    public Member() {
+    }
+
     public Member(String name, List<String> skills, Sex gender) {
         this.name = name;
         this.skills = skills;
@@ -25,5 +28,14 @@ public class Member {
 
     public Sex getGender() {
         return gender;
+    }
+
+    @Override
+    public String toString() {
+        return "Member{" +
+                "name='" + name + '\'' +
+                ", skills=" + skills +
+                ", gender=" + gender +
+                '}';
     }
 }

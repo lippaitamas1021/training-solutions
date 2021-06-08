@@ -1,13 +1,12 @@
 package lambdaoptional;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
 
 public class SocialNetwork {
 
-    private List<Member> members = new ArrayList<>();
+    private List<Member> members;
 
     public SocialNetwork(List<Member> members) {
         this.members = members;
@@ -23,14 +22,13 @@ public class SocialNetwork {
     }
 
     public Optional<Double> averageNumberOfSkills() {
+        if (members.isEmpty()) {
+            return Optional.empty();
+        }
         double sum = 0;
         for (Member member : members) {
             sum += member.getSkills().size();
         }
-        if (sum == 0) {
-            return Optional.empty();
-        } else {
-            return Optional.of(sum / members.size());
+        return Optional.of(sum / members.size());
         }
-    }
 }
